@@ -9,9 +9,6 @@ class CustomerControllerTest extends TestCase
 
     const INDEX_URI = 'api/v1/customers';
 
-     /**
-     * /products [GET]
-     */
     public function testShouldReturnCorrectCustomerStructure()
     {
         $this->get(self::INDEX_URI, []);
