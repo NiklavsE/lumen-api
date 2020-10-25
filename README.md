@@ -58,10 +58,6 @@ Command reads all csv files from storage/customer_data folder and imports conten
 
 ## Tests
 Tests are stored in tests folder.
-To run tests, execute from project root: 
-```
-vendor/bin/phpunit
-```
 
 
 
