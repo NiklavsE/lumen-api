@@ -42,7 +42,8 @@ CSV import is implemented using php artisan command:
 ```
 php artisan import:csv-data
 ```
-Command reads all csv files from storage/customer_data folder and imports content into database
+Command reads all csv files from storage/customer_data folder and imports content into database.
+Folder contains inital dummy file with column names, that are expected to be imported.
 
 ## Tests
 Tests are stored in tests folder.
