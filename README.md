@@ -1,24 +1,51 @@
-# Lumen PHP Framework
+# Description
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Application with CSV Aggregator that imports csv file contents from folder into database and API endpoint that returns items according to structure.
+Built with Lumen.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## API
+Api endpoint:
+```
+/api/v1/customers
+```
 
-## Official Documentation
+Example response: 
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+```
+  {
+    "data": [
+      {
+        "account_balance": 980,
+        "address": "87752 Walter Drive\nLinnietown, KY 18660",
+        "city": "Kleinberg",
+        "email": "wfeest@example.net",
+        "first_name": "John",
+        "last_name": "Brown",
+        "salutation": "mr",
+        "social_security_num": "827-52-2052"
+      }
+    ],
+    "meta": {
+      "pagination": {
+        "count": 1,
+        "current_page": 1,
+        "links": [],
+        "per_page": 10,
+        "total": 1,
+        "total_pages": 1
+      }
+    }
+  }
+```
+## CSV Import
+CSV import is implemented using php artisan command:
+```
+php artisan import:csv-data
+```
+Command reads all csv files from storage/customer_data folder and imports content into database
 
-## Contributing
+## Tests
+Tests are stored in tests folder.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
