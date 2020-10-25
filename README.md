@@ -12,42 +12,30 @@ Api endpoint:
 Example response: 
 
 ```
-{
-  "data": [
-    {
-      "first_name": null,
-      "last_name": "Doe",
-      "email": "test+doe@gmail.com",
-      "address": null,
-      "city": "London",
-      "salutation": "mr",
-      "social_security_num": null,
-      "account_balance": 50000
-    },
-    {
-      "first_name": "Jane",
-      "last_name": "Doe",
-      "email": "test+jane@gmail.com",
-      "address": null,
-      "city": null,
-      "salutation": "mr",
-      "social_security_num": "555-111-222-000",
-      "account_balance": 2000
-    }
-  ],
-  "meta": {
-    "pagination": {
-      "total": 4,
-      "count": 2,
-      "per_page": 2,
-      "current_page": 2,
-      "total_pages": 2,
-      "links": {
-        "previous": "http://localhost:8000/api/v1/customers?page=1"
+  {
+    "data": [
+      {
+        "account_balance": 980,
+        "address": "87752 Walter Drive\nLinnietown, KY 18660",
+        "city": "Kleinberg",
+        "email": "wfeest@example.net",
+        "first_name": "John",
+        "last_name": "Brown",
+        "salutation": "mr",
+        "social_security_num": "827-52-2052"
+      }
+    ],
+    "meta": {
+      "pagination": {
+        "count": 1,
+        "current_page": 1,
+        "links": [],
+        "per_page": 10,
+        "total": 1,
+        "total_pages": 1
       }
     }
   }
-}
 ```
 ## CSV Import
 CSV import is implemented using php artisan command:
