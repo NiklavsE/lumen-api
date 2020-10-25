@@ -27,6 +27,7 @@ class CSVAggregator
     {
         $delimiter = ',';
         $files = array_diff(scandir($this->path), array('.', '..'));
+        $expectedColumnNames = array('name', 'surname', 'email', 'address', 'city', 'gender', 'soc_security_num', 'balance');
         $data = array();
 
         foreach ($files as $file) {
@@ -46,7 +47,11 @@ class CSVAggregator
 
                     $row = str_getcsv($line);
                     if (!$header) {
-                        $header = $row;
+                        if ($row === $expectedColumnNames) {
+                            $header = $row;
+                        } else {
+                            return false;
+                        }
                     } else {
                         $data[] = array_combine($header, $row);
                     }
